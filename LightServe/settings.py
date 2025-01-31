@@ -134,4 +134,5 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'  
 
 CSRF_TRUSTED_ORIGINS = [
+    'https://lightserve-1.onrender.com',
 ]
