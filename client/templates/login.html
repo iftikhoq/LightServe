@@ -1,0 +1,23 @@
+{% extends 'base.html' %}  {% block content %}
+<main class="flex-grow flex items-center justify-center">
+    <div class="bg-white p-8 rounded-lg shadow-md w-96">
+        <h2 class="text-2xl font-bold text-center text-blue-600">Login</h2>
+        <form class="mt-4">
+            {% csrf_token %} {% for hidden_field in form.hidden_fields %} {{ hidden_field.errors }} {{ hidden_field }} {% endfor %} 
+                {% for field in form.visible_fields %}
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="{{ field.id_for_label }}">
+                {{ field.label }}
+            </label>
+                    <input class="w-full p-2 border rounded mt-2" name="{{ field.name }}" id="{{ field.id_for_label }}" type="{{ field.widget_type }}">
+                </div>
+                {% endfor %}
+            <button class="w-full bg-blue-600 text-white p-2 rounded mt-4 hover:bg-blue-700 transition">Login</button>
+        </form>
+        <p class="text-sm text-center mt-3">Don't have an account? 
+            <a href="{% url 'register' %}" class="text-blue-600 hover:underline">Sign up</a>
+        </p>
+    </div>
+</main>
+
+{% endblock %}

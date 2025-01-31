@@ -1,0 +1,56 @@
+<!-- <nav class="bg-gray-900 text-white">
+    <div class="container mx-auto px-4 flex items-center justify-between py-4">
+        <a class="text-xl font-bold" href="{% url 'home' %}">Onupomar Diary</a>
+
+        <button class="lg:hidden text-white focus:outline-none" id="menu-toggle">
+            <i class="fas fa-bars text-2xl"></i> 
+        </button>
+        
+        <div class="hidden lg:flex space-x-6 items-center" id="navbarNav">
+            {% if request.user.is_authenticated %}
+                <span class="text-white">Welcome, 
+                    <a href="{% url 'profile' %}" class="text-blue-400 hover:underline">{{ user.first_name }}</a>
+                </span>
+                <span class="text-white">Balance: ${{request.user.account.balance}}              
+                </span>
+                <a class="hover:text-gray-400" href="{% url 'deposit' %}">Deposit</a>
+                <a class="hover:text-gray-400" href="{% url 'logout' %}">Logout</a>
+            {% else %}
+                <span>Welcome, Guest!</span>
+                <a class="hover:text-gray-400" href="{% url 'login' %}">Login</a>
+                <a class="hover:text-gray-400" href="{% url 'register' %}">Signup</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="hidden flex flex-col space-y-2 bg-gray-800 p-4 lg:hidden" id="mobile-menu">
+        {% if user.is_authenticated %}
+            <span class="text-white">Welcome, 
+                <a href="{% url 'profile' %}" class="text-blue-400 hover:underline">{{ user.username }}</a>
+            </span>
+            <a class="hover:text-gray-400" href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <span>Welcome, Guest!</span>
+            <a class="hover:text-gray-400" href="{% url 'login' %}">Login</a>
+            <a class="hover:text-gray-400" href="{% url 'register' %}">Signup</a>
+        {% endif %}
+    </div>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</nav> -->
+<header class="p-4 bg-white shadow-md">
+    <nav class="flex justify-between items-center max-w-6xl mx-auto">
+        <h1 class="text-2xl font-bold text-blue-600">ChoreDash</h1>
+        <div class="flex space-x-4">
+            <a href="{% url 'home' %}" class="text-blue-600 hover:underline">Home</a>
+            <a href="{% url 'login' %}" class="text-blue-600 hover:underline">Services</a>
+            <a href="{% url 'login' %}" class="text-blue-600 hover:underline">Reviews</a>
+            <a href="{% url 'login' %}" class="text-blue-600 hover:underline">Cart</a>
+            <a href="{% url 'login' %}" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Login</a>
+        </div>
+    </nav>
+</header>
