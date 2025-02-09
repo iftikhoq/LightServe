@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # external modules
+    'corsheaders',
     'crispy_forms',
     'crispy_bootstrap5',
     'rest_framework',
@@ -37,6 +38,8 @@ CRISPY_ALLOWED_TEMPLATE_PACKS ='bootstrap5'
 CRISPY_TEMPLATE_PACK ='bootstrap5'
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -133,3 +136,8 @@ MEDIA_ROOT = BASE_DIR / 'media'
 CSRF_TRUSTED_ORIGINS = [
     'https://lightserve-1.onrender.com',
 ]
+
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:5500",  
+# ]
+CORS_ALLOW_ALL_ORIGINS = True
