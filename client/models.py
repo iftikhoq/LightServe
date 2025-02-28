@@ -16,6 +16,7 @@ class Client(models.Model):
 
 class Order(models.Model):
     client = models.ForeignKey(User, on_delete=models.CASCADE, related_name='orders')
+    address = models.CharField(max_length= 100, default="null")
     services = models.ManyToManyField(Service)
     total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     status_choices = [('pending', 'Pending'), ('completed', 'Completed')]

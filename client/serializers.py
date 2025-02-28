@@ -1,7 +1,19 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from .models import Client
+from .models import Client, Order
 from .constants import GENDER_TYPE
+
+class OrderSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Order
+        fields = ['id', 'client', 'address', 'services', 'total_price', 'status', 'created_at']
+        read_only_fields = ['client', 'status', 'created_at']  # Prevent users from modifying these fields
+
+    def create(self, validated_data):
+        request = self.context.get('request')
+        validated_data['client'] = request.user  # Set the logged-in user
+        return super().create(validated_data)
+
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
