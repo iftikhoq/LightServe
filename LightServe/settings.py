@@ -71,7 +71,7 @@ WSGI_APPLICATION = 'LightServe.wsgi.application'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',  # Token-based authentication
+        'rest_framework.authentication.TokenAuthentication',
     ],
 }
 
@@ -137,7 +137,7 @@ CSRF_TRUSTED_ORIGINS = [
     'https://lightserve-1.onrender.com',
 ]
 
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:5500",  
-# ]
+CORS_ALLOWED_ORIGINS = [
+    "https://iftikhoq.github.io/Lightserve-frontend/",  
+]
 CORS_ALLOW_ALL_ORIGINS = True
