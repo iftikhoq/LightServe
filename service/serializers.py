@@ -17,10 +17,10 @@ class ServiceSerializer(serializers.ModelSerializer):
 #         model = Order
 #         fields = ['id', 'client', 'services', 'total_price', 'status', 'created_at']
 
-# class ReviewSerializer(serializers.ModelSerializer):
-#     client = serializers.StringRelatedField()  
-#     service = serializers.StringRelatedField() 
+class ReviewSerializer(serializers.ModelSerializer):
+    client = serializers.StringRelatedField()  
+    service = serializers.StringRelatedField() 
 
-#     class Meta:
-#         model = Review
-#         fields = '__all__'
+    class Meta:
+        model = Review
+        fields = '__all__'

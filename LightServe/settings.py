@@ -138,6 +138,8 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "https://iftikhoq.github.io/Lightserve-frontend/",  
+    "https://iftikhoq.github.io",
+    "http://localhost:5500",
+    "http://127.0.0.1:5500",
 ]
-CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOW_ALL_ORIGINS = True

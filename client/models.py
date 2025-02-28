@@ -12,7 +12,7 @@ class Client(models.Model):
     join_date = models.DateField(auto_now_add=True)
     balance = models.DecimalField(default=0, max_digits=12, decimal_places=2) 
     def __str__(self):
-        return str(self.account_no)
+        return str(self.join_date)
 
 class Order(models.Model):
     client = models.ForeignKey(User, on_delete=models.CASCADE, related_name='orders')
